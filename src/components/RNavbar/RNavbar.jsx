@@ -31,11 +31,9 @@ class RNavbar extends React.Component {
   }
 
   render() {console.log(this.props.active)
-    let className = 'mx-1';
-    let active = 'mx-1 current';
 
     return (
-      <Container fluid>
+      <Container fluid className="pt-3 pb-4">
         <Row className="pt-2">
           <Col sm={4} className="text-left">
             <h2 className="r-brand text-start">
