@@ -1,24 +1,36 @@
 import logo from './logo.svg';
 import './App.css';
+import './scss/style.scss';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import { RNavbar } from 'components/RNavbar/RNavbar';
+
+
+import Container from 'react-bootstrap/Container';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from 'react-router-dom';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container fluid className="main-card h-100">
+      <Row>
+        <Col sm={12}>
+          <Router>
+            <Container fluid className="App px-4">
+              <RNavbar />
+
+            </Container>
+          </Router>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 

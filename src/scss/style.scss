@@ -5,37 +5,13 @@ body {
 @import '~scss/colors';
 @import '~scss/globals';
 
-.kbl-table {
-  overflow: hidden;
-  border-radius: $border-radius;
-  box-shadow: 0 .0925rem .165rem rgba(0, 0, 0, 0.19);
-  border: none;
-
-  .kbl-thead {
-    background: $palette-2;
-    border-bottom: 1px solid $color-light-grey;
-    color: white;
-
-    .human {
-      background: $palette-2-dark;
-    }
-
-    .bottom {
-      background: $palette-2-light;
-      color: $text-main;
-    }
-  }
-
-  tr {
-    border-bottom: 1px solid $color-light-grey;
-
-    &:last-child {
-      border-bottom: none!important;
-    }
-  }
+body {
+  background: #e3e3e3!important;
+  padding: 20px 20px;
 }
 
-.table-responsive {
-  padding: 5px 2px;
-  border: none;
+.main-card {
+  border-top-right-radius: $border-radius-big;
+  border-top-left-radius: $border-radius-big;
+  background: #fff;
 }

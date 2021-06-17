@@ -3,10 +3,9 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import {Brand} from 'react-bootstrap';
 
-import './HNavbar.scss';
-import { env } from 'env.js';
+import './RNavbar.scss';
 
-class HNavbar extends React.Component {
+class RNavbar extends React.Component {
 
   constructor(props) {
     super(props);
@@ -33,23 +32,23 @@ class HNavbar extends React.Component {
     let active = 'mx-1 current';
 
     return (
-      <div className="mx-5 mb-4 mt-3 nav-wrapper mx-auto">
+      <div className="mb-4 mt-3 nav-wrapper">
         <Navbar>
           <Navbar.Brand className="h-brand">
             <b>HuCoPIA</b>
           </Navbar.Brand>
 
           <Nav className="mr-auto">
-            <Nav.Link href={`${env.BASE_URL}/home`} className={'home' === this.props.active ? active : className}>
+            <Nav.Link>
               Home
             </Nav.Link>
-            <Nav.Link href="#" className={'about' === this.props.active ? active : className}>
+            <Nav.Link>
               About
             </Nav.Link>
-            <Nav.Link href="#" className={'dataset' === this.props.active ? active : className}>
+            <Nav.Link>
               Data Set
             </Nav.Link>
-            <Nav.Link href="#" className={'help' === this.props.active ? active : className}>
+            <Nav.Link>
               Help
             </Nav.Link>
           </Nav>
@@ -60,4 +59,4 @@ class HNavbar extends React.Component {
   }
 }
 
-export {HNavbar};
+export {RNavbar};
