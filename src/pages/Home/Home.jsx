@@ -6,6 +6,8 @@ import Col from 'react-bootstrap/Col';
 
 import './Home.scss';
 
+import { File } from 'components/File/File';
+
 export class Home extends Component {
   constructor(props) {
     super(props);
@@ -13,6 +15,18 @@ export class Home extends Component {
     this.state = {
 
     }
+  }
+
+  componentDidMount() {
+    axios.get('http://localhost:3010/dir/')
+      .then((res) => {
+        if (res.data && res.data.success) {
+          console.log(res.data.results);
+        }
+      })
+      .catch(e => {
+        console.log(e);
+      });
   }
 
   render() {
