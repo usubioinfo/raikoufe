@@ -4,7 +4,7 @@ import './scss/style.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { RNavbar } from 'components/RNavbar/RNavbar';
-
+import { Home } from 'pages/Home/Home';
 
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
@@ -25,7 +25,7 @@ function App() {
           <Router>
             <Container fluid className="App px-4">
               <RNavbar />
-
+              <Home />
             </Container>
           </Router>
         </Col>
