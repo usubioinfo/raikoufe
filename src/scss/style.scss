@@ -26,3 +26,8 @@ h6 {
   border-top-left-radius: $border-radius-big;
   background: #fff;
 }
+
+.row.display-flex {
+  display: flex;
+  flex-wrap: wrap;
+}

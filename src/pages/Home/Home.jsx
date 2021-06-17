@@ -13,7 +13,7 @@ export class Home extends Component {
     super(props);
 
     this.state = {
-
+      files: []
     }
   }
 
@@ -22,6 +22,7 @@ export class Home extends Component {
       .then((res) => {
         if (res.data && res.data.success) {
           console.log(res.data.results);
+          this.setState({files: res.data.results});
         }
       })
       .catch(e => {
@@ -32,10 +33,12 @@ export class Home extends Component {
   render() {
     return (
       <Container>
-        <Row>
-          <Col sm={12}>
-            <h1>Testing</h1>
-          </Col>
+        <Row className="display-flex">
+          {this.state.files.map((file, index) => (
+            <Col sm={3} key={`${file}-${index}`}>
+              <File fileObject={file}/>
+            </Col>
+          ))}
         </Row>
       </Container>
     );
