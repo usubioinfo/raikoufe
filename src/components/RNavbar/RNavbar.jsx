@@ -1,7 +1,10 @@
 import React from 'react';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
-import {Brand} from 'react-bootstrap';
+
+import Container from 'react-bootstrap/Container';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+
+import { Form } from 'react-bootstrap'
 
 import './RNavbar.scss';
 
@@ -32,29 +35,30 @@ class RNavbar extends React.Component {
     let active = 'mx-1 current';
 
     return (
-      <div className="mb-4 mt-3 nav-wrapper">
-        <Navbar>
-          <Navbar.Brand className="h-brand">
-            <b>HuCoPIA</b>
-          </Navbar.Brand>
+      <Container fluid>
+        <Row className="pt-2">
+          <Col sm={4} className="text-left">
+            <h2 className="r-brand text-start">
+              Raikou
+            </h2>
+          </Col>
 
-          <Nav className="mr-auto">
-            <Nav.Link>
-              Home
-            </Nav.Link>
-            <Nav.Link>
-              About
-            </Nav.Link>
-            <Nav.Link>
-              Data Set
-            </Nav.Link>
-            <Nav.Link>
-              Help
-            </Nav.Link>
-          </Nav>
+          <Col sm={2}>
+            <Form.Control className="nav-form" placeholder="Search"></Form.Control>
+          </Col>
 
-        </Navbar>
-      </div>
+          <Col sm={2} className="pt-1">
+            <span className="nav-option bioinfo">
+              Bioinfo
+            </span>
+          </Col>
+          <Col sm={2} className="pt-1">
+            <span className="nav-option bcore">
+              Bioinfocore
+            </span>
+          </Col>
+        </Row>
+      </Container>
     );
   }
 }
