@@ -14,7 +14,20 @@
   }
 
   img {
-    object-fit: fill!important;
-    max-height: 200px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover!important;
+    height: 200px;
+    border-bottom: 1px solid #e2e2e2;
+  }
+
+  .img-name {
+    color: $text-light;
+    font-weight: 600;
+  }
+
+  .folder {
+    color: $text-light;
+    font-weight: 600;
   }
 }

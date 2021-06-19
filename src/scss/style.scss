@@ -1,14 +1,15 @@
-body {
-  font-family: 'Inter', sans-serif;
-}
-
 @import '~scss/colors';
 @import '~scss/globals';
 
+html, body, #root, .App {
+  height: 100%;
+}
+
 body {
   background: #e3e3e3!important;
-  padding: 40px 40px;
-  font-family: 'Exo 2', sans-serif;
+  padding: 40px 40px 0 40px;
+  font-family: 'Exo 2', sans-serif!important;
+  min-height: 100%;
 }
 
 h1,
@@ -30,4 +31,8 @@ h6 {
 .row.display-flex {
   display: flex;
   flex-wrap: wrap;
+}
+
+a.no-dec {
+  text-decoration: none!important;
 }

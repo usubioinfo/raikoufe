@@ -10,19 +10,25 @@ export const File = ({ fileObject }) => {
 
   if (fileObject.type === 'directory') {
     insideContents = (
-      <h4>{fileObject.name}</h4>
+      <h4 className="py-2 folder text-start ps-3">{fileObject.name}</h4>
     );
-    link = `http://localhost:3010${fileObject.fileName}`;
+    link = `http://localhost:3010${fileObject.name}`;
   } else {
     insideContents = (
-      <Image src={`http://localhost:3010${fileObject.filePath}`}/>
+      <div>
+        <Image src={`http://localhost:3010${fileObject.filePath}`}/>
+        <div className="img-name text-start px-3 py-2">
+          {fileObject.name}
+        </div>
+      </div>
+
     );
     link = `http://localhost:3010${fileObject.filePath}`;
   }
 
   return (
-    <a href={link} target="_blank" rel="noopener noreferrer">
-      <div className="file-card py-2 my-2">
+    <a href={link} target="_blank" rel="noopener noreferrer" className="no-dec">
+      <div className="file-card my-2">
         {insideContents}
       </div>
     </a>
