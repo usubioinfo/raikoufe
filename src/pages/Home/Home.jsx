@@ -15,7 +15,7 @@ export class Home extends Component {
     this.state = {
       files: [],
       directories: [],
-      currentPath: '/empoleon/'
+      currentPath: '/'
     }
 
     this.handleDirClick = this.handleDirClick.bind(this);
