@@ -3,7 +3,7 @@ import { Image } from 'react-bootstrap';
 
 import './File.scss';
 
-export const File = ({ fileObject }) => {
+export const File = ({ fileObject, clickHandler }) => {
 
   let insideContents;
   let link;
@@ -11,6 +11,12 @@ export const File = ({ fileObject }) => {
   if (fileObject.type === 'directory') {
     insideContents = (
       <h4 className="py-2 folder text-start ps-3">{fileObject.name}</h4>
+    );
+
+    return (
+      <div className="file-card my-2" onClick={() => {clickHandler(fileObject.name)}}>
+        {insideContents}
+      </div>
     );
     link = `http://localhost:3010${fileObject.name}`;
   } else {

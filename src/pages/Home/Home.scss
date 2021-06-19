@@ -1,2 +1,21 @@
 @import '~scss/colors';
 @import '~scss/globals';
+
+.img-container {
+  background: #f4f4f4;
+  border-radius: $big-radius;
+}
+
+.back-button {
+  border-radius: $border-radius;
+  font-weight: 600;
+  font-size: 110%;
+  transition: $time-mid;
+  cursor: pointer;
+  color: $text-light;
+
+  &:hover {
+    background: #ddd;
+    color: $text-main;
+  }
+}
