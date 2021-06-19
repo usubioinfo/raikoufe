@@ -8,6 +8,8 @@ import './Home.scss';
 
 import { File } from 'components/File/File';
 
+import { BASE_URL } from '.env';
+
 export class Home extends Component {
   constructor(props) {
     super(props);
@@ -22,7 +24,7 @@ export class Home extends Component {
   }
 
   componentDidMount() {
-    axios.get(`http://localhost:3010/dir${this.state.currentPath}`)
+    axios.get(`${BASE_URL}/dir${this.state.currentPath}`)
       .then((res) => {
         if (res.data && res.data.success) {
           console.log(res.data.files);
@@ -37,7 +39,7 @@ export class Home extends Component {
   handleDirClick(dirName) {
     let currentPath = this.state.currentPath;
     this.setState({currentPath: `${currentPath}/${dirName}/`.replace(/\/\//, '/')}, () => {
-      axios.get(`http://localhost:3010/dir${this.state.currentPath}`)
+      axios.get(`${BASE_URL}/dir${this.state.currentPath}`)
         .then((res) => {
           if (res.data && res.data.success) {
             this.setState({files: res.data.files, directories: res.data.directories});
@@ -58,7 +60,7 @@ export class Home extends Component {
     console.log(`${pathArr.join('/')}/`);
 
     this.setState({currentPath: `${pathArr.join('/')}/`.replace(/\/\//, '/')}, () => {
-      axios.get(`http://localhost:3010/dir${this.state.currentPath}`)
+      axios.get(`${BASE_URL}/dir${this.state.currentPath}`)
         .then((res) => {
           if (res.data && res.data.success) {
             this.setState({files: res.data.files, directories: res.data.directories});

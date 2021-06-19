@@ -3,6 +3,8 @@ import { Image } from 'react-bootstrap';
 
 import './File.scss';
 
+import { BASE_URL } from '.env';
+
 export const File = ({ fileObject, clickHandler }) => {
 
   let insideContents;
@@ -18,18 +20,17 @@ export const File = ({ fileObject, clickHandler }) => {
         {insideContents}
       </div>
     );
-    link = `http://localhost:3010${fileObject.name}`;
   } else {
     insideContents = (
       <div>
-        <Image src={`http://localhost:3010${fileObject.filePath}`}/>
+        <Image src={`${BASE_URL}${fileObject.filePath}`}/>
         <div className="img-name text-start px-3 py-2">
           {fileObject.name}
         </div>
       </div>
 
     );
-    link = `http://localhost:3010${fileObject.filePath}`;
+    link = `${BASE_URL}${fileObject.filePath}`;
   }
 
   return (
